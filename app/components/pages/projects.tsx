@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ProjectCard from "../common/project_card";
 export default function Projects(){
     const projects = [
@@ -56,10 +57,10 @@ export default function Projects(){
                     />
                 ))}
             </div>
-            <div className="flex justify-center mt-8">
-                <button type="button" className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200">
+            <div className="flex justify-center mt-8 py-5">
+                <Link href="#" className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200">
                     View All Projects
-                </button>
+                </Link>
             </div>
         </section>
     );

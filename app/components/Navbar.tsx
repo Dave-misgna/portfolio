@@ -7,7 +7,7 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-md z-50">
       <div className="flex justify-between items-center h-16 ">
         
-        <a href="#introduction" className="text-xl font-bold text-white  px-8">
+        <a href="#intro" className="text-xl font-bold text-white  px-8">
           Dawit
         </a>
 

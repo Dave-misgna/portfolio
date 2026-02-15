@@ -27,7 +27,7 @@ export default function Introduction() {
               font-medium rounded-md shadow-sm bg-blue-500 hover:bg-blue-700 text-white basis-xs ">
                 Resume
               </Link>
-              <Link href=""className="inline-flex items-center justify-center px-2 py-2 border border-blue-500 
+              <Link href="#contact"className="inline-flex items-center justify-center px-2 py-2 border border-blue-500 
                font-medium rounded-md shadow-sm bg-gray-700 hover:bg-gray-900 text-white basis-xs">
                 Let's Talk
               </Link>

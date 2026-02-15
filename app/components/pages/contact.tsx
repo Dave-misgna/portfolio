@@ -33,7 +33,7 @@ export default function Contact(){
 
                        
                         <Link
-                        href="https://github.com/yourusername"
+                        href="https://github.com/Dave-misgna"
                         target="_blank"
                         className="p-3 rounded-lg border border-neutral-700 bg-neutral-800 
                         hover:border-white hover:bg-neutral-700 

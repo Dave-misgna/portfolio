@@ -7,6 +7,7 @@ export default function Introduction() {
       id="intro"
       className="min-h-screen flex items-center px-6 pt-24 bg-neutral-900"
     >
+      <div className="flex-col items-center w-full">
       <div className="w-full h-full flex flex-col md:flex-row items-center justify-between gap-12 md:items-center">
 
         {/*LEFT SIDE*/}
@@ -46,6 +47,25 @@ export default function Introduction() {
             className="rounded-full object-cover w-64 h-64 md:w-80 md:h-80"
           />
         </div>
+
+      </div>
+      <div className="flex justify-center ">
+        <a href="#about">
+        <svg 
+          className="w-12 h-12 text-blue-500 animate-bounce"
+          fill="none" 
+          stroke="currentColor" 
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            d="M12 5v14m0 0l-6-6m6 6l6-6"
+          />
+        </svg>
+        </a>
+      </div>
 
       </div>
     </section>

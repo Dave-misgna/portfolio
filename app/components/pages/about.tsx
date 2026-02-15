@@ -1,3 +1,5 @@
+import FadeInSection from "../common/SlideUpSection";
+
 export default function About() {
   return (
     <section id="about" className="min-h-screen py-24 px-6">
@@ -31,7 +33,7 @@ export default function About() {
          
         </div>
       </div>
-      
+      <FadeInSection>
         <div className="w-full grid justify-items-center md:grid-cols-3 sm:grid-cols-2 py-12 gap-4">
           <div className="flex items-center justify-center flex-col box-border size-50 rounded-md bg-blue-800">
             <h1 className="text-5xl">2+</h1>
@@ -46,6 +48,7 @@ export default function About() {
             <p className="text-xl text-gray-300 leading-relaxed">Happy Clients</p>
           </div>
         </div>
+      </FadeInSection>
 
     </section>
   );

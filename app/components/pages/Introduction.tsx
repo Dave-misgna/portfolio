@@ -5,7 +5,7 @@ export default function Introduction() {
   return (
     <section
       id="intro"
-      className="min-h-screen flex items-center px-6 pt-24"
+      className="min-h-screen flex items-center px-6 pt-24 bg-neutral-900"
     >
       <div className="w-full h-full flex flex-col md:flex-row items-center justify-between gap-12 md:items-center">
 

@@ -30,20 +30,22 @@ export default function About() {
          
         </div>
       </div>
-      <div className="grid gap-12 md:grid-cols-3 sm:grid-cols-2 p-8">
-        <div className="flex items-center justify-center flex-col box-border size-64 rounded-md p-4 mt-12 bg-blue-800">
-          <h1 className="text-6xl">2+</h1>
-          <p className="text-2xl text-gray-300 leading-relaxed">Years Of Experience</p>
+      
+        <div className="w-full grid justify-items-center md:grid-cols-3 sm:grid-cols-2 py-8">
+          <div className="flex items-center justify-center flex-col box-border size-64 rounded-md mt-12 bg-blue-800">
+            <h1 className="text-6xl">2+</h1>
+            <p className="text-2xl text-gray-300 leading-relaxed">Years Of Experience</p>
+          </div>
+          <div className="flex items-center justify-center flex-col box-border size-64 rounded-md mt-12 bg-blue-900">
+            <h1 className="text-6xl">20+</h1>
+            <p className="text-2xl text-gray-300 leading-relaxed">Projects Completed</p>
+          </div>
+          <div className="flex items-center justify-center flex-col box-border size-64 rounded-md mt-12 bg-blue-800">
+            <h1 className="text-6xl">3+</h1>
+            <p className="text-2xl text-gray-300 leading-relaxed">Happy Clients</p>
+          </div>
         </div>
-        <div className="flex items-center justify-center flex-col box-border size-64 rounded-md p-4 mt-12 bg-blue-900">
-          <h1 className="text-6xl">20+</h1>
-          <p className="text-2xl text-gray-300 leading-relaxed">Projects Completed</p>
-        </div>
-        <div className="flex items-center justify-center flex-col box-border size-64 rounded-md p-4 mt-12 bg-blue-800">
-          <h1 className="text-6xl">3+</h1>
-          <p className="text-2xl text-gray-300 leading-relaxed">Happy Clients</p>
-        </div>
-      </div>
+
     </section>
   );
 }

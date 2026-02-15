@@ -1,5 +1,6 @@
 import Introduction from "./components/pages/Introduction";
 import About from "./components/pages/about";
+import Projects from "./components/pages/projects";
 
 
 export default function Home() {
@@ -7,8 +8,8 @@ export default function Home() {
      <main>
       <Introduction />
       <About />
-      {/* <Projects />
-      <Contact />  */}
+      <Projects />
+      {/* <Contact />   */}
     </main>
   );
 }

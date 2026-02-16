@@ -18,7 +18,7 @@ export default function Projects(){
       description: "A Flutter-based offline employee attendance management app designed to help New-Hope PLC track and control their employee attendance efficiently."
     },
     {
-      title: "drumkit demo website",
+      title: "Drumkit demo website",
       image: "/images/drumkit.png",
       tag: ["javascript", "html", "css"],
       link: "https://dave-misgna.github.io/Drum-Kit/",

@@ -24,7 +24,7 @@ export default function Introduction() {
           </p>
           
             <div className="flex max-w-4xl text-xl gap-10 px-4">
-              <Link href="https://drive.google.com/file/d/1Vqq1bhHvPU0HD9Ji2vLFUUDeKLwom13A/view?usp=sharing"className="inline-flex items-center justify-center px-2 py-2 border border-transparent 
+              <Link href="https://drive.google.com/file/d/1Vqq1bhHvPU0HD9Ji2vLFUUDeKLwom13A/view?usp=sharing" target="_blank" className="inline-flex items-center justify-center px-2 py-2 border border-transparent 
               font-medium rounded-md shadow-sm bg-blue-500 hover:bg-blue-700 text-white basis-xs ">
                 Resume
               </Link>

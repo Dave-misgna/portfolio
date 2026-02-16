@@ -12,7 +12,8 @@ export default function ProjectCard(props: ProjectCardProps) {
   const { title, image, tag , link, description } = props;
   return (
     <div className="bg-neutral-800 w-full 
-    max-w-sm border rounded-md shadow-xs h-full flex flex-col border-blue-900">
+    max-w-sm border rounded-md shadow-xs h-full flex flex-col border-blue-900 
+    transform transition-transform duration-300 ease-in-out hover:scale-105">
         <div>
             <img
             className="rounded-t-base w-full h-40 object-cover"

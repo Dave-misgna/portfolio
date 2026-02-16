@@ -4,38 +4,39 @@ import FadeInSection from "../common/SlideUpSection";
 export default function Projects(){
     const projects = [
     {
-      title: "Flutter Attendance App",
-      image: "/images/portfolio_image.jpg",
-      tag: ["Flutter", "Drift", "Dart", "Mobile App"],
-      description: "A mobile application built with Flutter and Drift that allows users to easily track attendance. The app features a user-friendly interface and provides real-time updates on attendance records.",
-      link: "#",
+      title: "Auction Flutter App",
+      image: "/images/image.jpg",
+      tag: ["Flutter", "Riverpod", "Dart", "Firebase Auth"],
+      description: "An Art Auction Mobile App built for Kuraz Tech, allowing artists to showcase their artworks for auction and users to bid in real time.",
+      link: "https://github.com/Dave-misgna/Art-Auction-App",
     },
     {
       title: "Flutter Attendance App",
-      image: "/images/portfolio_image.jpg",
-      tag: ["Flutter", "Drift", "Dart", "Mobile App"],
-      link: "#",
-      description: "A mobile application built with Flutter and Drift that allows users to easily track attendance."
+      image: "/images/attendanceapp.png",
+      tag: ["Flutter", "Provider", "Dart", "GoRouter"],
+      link: "https://github.com/Dave-misgna/Attendance-App",
+      description: "A Flutter-based offline employee attendance management app designed to help New-Hope PLC track and control their employee attendance efficiently."
     },
     {
-      title: "3D Pendulum Simulation",
-      image: "/images/portfolio_image.jpg",
-      tag: ["Three.js"],
-      link: "#",
+      title: "drumkit demo website",
+      image: "/images/drumkit.png",
+      tag: ["javascript", "html", "css"],
+      link: "https://dave-misgna.github.io/Drum-Kit/",
+      description:"Template designed for users to explore, learn, and play virtual drum sounds, typically by pressing buttons on the website that trigger different drum kit sounds."
     },
     {
-      title: "Flutter Attendance App",
-      image: "/images/portfolio_image.jpg",
-      tag: ["Flutter", "Drift", "Mobile App"],
-      link: "#",
-      description: "A mobile application built with Flutter and Drift that allows users to easily track attendance."
+      title: "Flutter News App",
+      image: "/images/newsapp.png",
+      tag: ["Flutter", "Riverpod", "GetIt", "Firebase ", "Guardian API"],
+      link: "https://github.com/Dave-misgna/News-App",
+      description: "A Flutter News Application that fetches the latest news from [The Guardian API]"
     },
     {
       title: "Flutter Movie App ",
       image: "/images/image.png",
-      tag: ["Flutter", "Drift", "Dart", "Mobile App"],
-      link: "#",
-      description: "A mobile application built with Flutter and Drift that allows users to easily track attendance."
+      tag: ["Flutter", "Riverpod", "GetIt", "TMDb API"],
+      link: "https://github.com/Dave-misgna/Movie-App",
+      description: "A Flutter Movie Application that fetches movies from [The Movie Database (TMDb) API]."
     },
     
   ];
@@ -60,7 +61,7 @@ export default function Projects(){
             </div>
             </FadeInSection>
             <div className="flex justify-center mt-8 py-5">
-                <Link href="#" className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200">
+                <Link href="https://github.com/Dave-misgna" target="_blank" className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200">
                     View All Projects
                 </Link>
             </div>

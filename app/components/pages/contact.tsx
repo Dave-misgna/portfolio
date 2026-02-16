@@ -17,7 +17,7 @@ export default function Contact(){
                     </p>
                     <div className="flex items-center justify-center gap-6 py-18">
                         
-                        <Link href="https://linkedin.com/in/yourusername" target="_blank"
+                        <Link href="https://www.linkedin.com/in/dawit-misgna-aa3ab825a/" target="_blank"
                             className="p-3 rounded-lg border border-neutral-700 bg-neutral-800 
                             hover:border-blue-500 hover:bg-neutral-700 
                             transition-all duration-300 hover:scale-110"

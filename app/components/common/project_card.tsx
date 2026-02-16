@@ -42,7 +42,7 @@ export default function ProjectCard(props: ProjectCardProps) {
 
         
         <div className="flex justify-center p-4">
-            <Link href={link}
+            <Link href={link} target="_blank"
             className="mt-auto inline-flex items-center px-4 py-2 text-sm font-medium
              bg-blue-800 rounded-md hover:bg-blue-700 transition-colors duration-300 "
             >

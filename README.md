@@ -1,13 +1,13 @@
-💼 Portfolio
+# 💼 Portfolio
 
 Welcome to my personal portfolio website!
 This project showcases my skills, projects, and experience as a Software Engineering student with interests in Flutter development, Full-Stack Development, and Cybersecurity.
 
-🚀 Live Demo
+## 🚀 Live Demo
 
 🔗 https://portfolio-eosin-eight-0fz68017vk.vercel.app/
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 This portfolio was built using:
 
@@ -36,6 +36,6 @@ This portfolio was built using:
 📱 Fully responsive design
 
 
-⭐ Support
+## ⭐ Support
 
 If you like this project, consider giving it a ⭐ on GitHub!

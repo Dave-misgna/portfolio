@@ -1,6 +1,43 @@
+"use client";
 import Link from "next/link";
 
+import { useState } from "react";
+
 export default function Contact(){
+    const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitting(true);
+
+    const form = e.currentTarget;
+    
+    const formData = new FormData(e.currentTarget);
+
+    const data = {
+      firstName: formData.get("first-name"),
+      lastName: formData.get("last-name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+        if (res.ok) {
+      alert("Message sent successfully, I will get back to you soon!");
+      e.currentTarget.reset();
+    } else {
+      alert("Something went wrong");
+    }
+
+        setSubmitting(false);
+  };
     return(
         <section id="contact" className="min-h-screen bg-neutral-900">
             <div className="grid sm:grid-cols-2 gap-20 items-start p-8">
@@ -71,7 +108,7 @@ export default function Contact(){
                         
                 <div className="flex flex-col items-start">
                 
-                    <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+                    <form onSubmit={handleSubmit} className="mx-auto mt-16 max-w-xl sm:mt-20">
                         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                         <div>
                             <label htmlFor="first-name" className="block text-sm/6 font-semibold text-white">
@@ -83,6 +120,7 @@ export default function Contact(){
                                 name="first-name"
                                 type="text"
                                 autoComplete="given-name"
+                                required
                                 className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
                             />
                             </div>
@@ -97,6 +135,7 @@ export default function Contact(){
                                 name="last-name"
                                 type="text"
                                 autoComplete="family-name"
+                                required
                                 className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
                             />
                             </div>
@@ -112,6 +151,7 @@ export default function Contact(){
                                 name="email"
                                 type="email"
                                 autoComplete="email"
+                                required
                                 className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
                             />
                             </div>
@@ -127,7 +167,7 @@ export default function Contact(){
                                 name="message"
                                 rows={4}
                                 className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
-                                defaultValue={''}
+                                required
                             />
                             </div>
                         </div>
@@ -136,10 +176,22 @@ export default function Contact(){
                         <div className="py-15">
                             <button
                                 type="submit"
-                                className="block w-full rounded-md bg-blue-900 px-3.5 py-2.5 text-center text-sm font-semibold
+                                disabled={submitting}
+                                aria-busy={submitting}
+                                className="flex items-center justify-center gap-2 w-full rounded-md bg-blue-900 px-3.5 py-2.5 text-center text-sm font-semibold
                                 text-white shadow-xs hover:bg-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2
-                                focus-visible:outline-blue-500">
-                                Let's talk
+                                focus-visible:outline-blue-500 disabled:opacity-60 disabled:cursor-not-allowed">
+                                {submitting ? (
+                                    <>
+                                        <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                                        </svg>
+                                        <span>Submitting...</span>
+                                    </>
+                                ) : (
+                                    "Let's talk"
+                                )}
                             </button>
                         </div>
                     </form>

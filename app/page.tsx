@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Dawit Misgna | Flutter Developer in Ethiopia",
   description:
     "Dawit Misgna is a Flutter Developer and Full Stack Engineer based in Addis Ababa, Ethiopia.",
+  verification: {
+    google: "TZq5z-V4zDXYIMlYz4D9c-RkhgG56M63PqSL6-KAJYU",
+  },
   keywords: [
     "Dawit Misgna",
     "Flutter Developer Ethiopia",

@@ -7,9 +7,9 @@ import Skills from "./components/pages/skills";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dawit Misgna | Flutter Developer in Ethiopia",
+  title: "Dawit Misgna | Software Developer",
   description:
-    "Dawit Misgna is a Flutter Developer and Full Stack Engineer based in Addis Ababa, Ethiopia.",
+    "Dawit Misgna is a Software Developer based in Addis Ababa, Ethiopia.",
   verification: {
     google: "TZq5z-V4zDXYIMlYz4D9c-RkhgG56M63PqSL6-KAJYU",
   },

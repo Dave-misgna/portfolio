@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Dawit Misgna | Software Developer",
   description:
-    "Dawit Misgna is a Software Developer based in Addis Ababa, Ethiopia.",
+    "Dawit Misgna is a Software Developer based in Ethiopia.",
   verification: {
     google: "TZq5z-V4zDXYIMlYz4D9c-RkhgG56M63PqSL6-KAJYU",
   },
@@ -18,9 +18,6 @@ export const metadata: Metadata = {
     "Flutter Developer Ethiopia",
     "Mobile App Developer Addis Ababa",
     "Full Stack Developer",
-    "Riverpod",
-    "NestJS",
-    "Prisma",
   ],
   authors: [{ name: "Dawit Misgna" }],
 };

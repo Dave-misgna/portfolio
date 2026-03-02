@@ -5,7 +5,7 @@ export default function Projects(){
     const projects = [
     {
       title: "Auction Flutter App",
-      image: "/images/image.jpg",
+      image: "/images/ArtAuction.jpeg",
       tag: ["Flutter", "Riverpod", "Dart", "Firebase Auth"],
       description: "An Art Auction Mobile App built for Kuraz Tech, allowing artists to showcase their artworks for auction and users to bid in real time.",
       link: "https://github.com/Dave-misgna/Art-Auction-App",
@@ -17,16 +17,10 @@ export default function Projects(){
       link: "https://github.com/Dave-misgna/Attendance-App",
       description: "A Flutter-based offline employee attendance management app designed to help New-Hope PLC track and control their employee attendance efficiently."
     },
-    {
-      title: "Drumkit demo website",
-      image: "/images/drumkit.png",
-      tag: ["javascript", "html", "css"],
-      link: "https://dave-misgna.github.io/Drum-Kit/",
-      description:"Template designed for users to explore, learn, and play virtual drum sounds, typically by pressing buttons on the website that trigger different drum kit sounds."
-    },
+    
     {
       title: "Flutter News App",
-      image: "/images/newsapp.png",
+      image: "/images/NewsApp.jpg",
       tag: ["Flutter", "Riverpod", "GetIt", "Firebase ", "Guardian API"],
       link: "https://github.com/Dave-misgna/News-App",
       description: "A Flutter News Application that fetches the latest news from [The Guardian API]"
@@ -38,6 +32,13 @@ export default function Projects(){
       link: "https://github.com/Dave-misgna/Movie-App",
       description: "A Flutter Movie Application that fetches movies from [The Movie Database (TMDb) API]."
     },
+    {
+      title: "Tourism App (Demo)",
+      image: "/images/tourismapp.jpg",
+      tag: ["Dart", "Flutter"],
+      link: "https://github.com/Dave-misgna/Tourism-App",
+      description:"Demo version of a modern mobile tourism application built with Flutter to showcase Ethiopia's incredible cultural, historical, and natural attractions."
+    }
     
   ];
     return(

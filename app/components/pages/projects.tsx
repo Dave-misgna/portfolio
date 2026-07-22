@@ -15,7 +15,7 @@ export default function Projects(){
       image: "/images/attendanceapp.png",
       tag: ["Flutter", "Provider", "Dart", "GoRouter"],
       link: "https://github.com/Dave-misgna/Attendance-App",
-      description: "A Flutter-based offline employee attendance management app designed to help New-Hope PLC track and control their employee attendance efficiently."
+      description: "A Flutter-based offline employee attendance management app designed to help vital security plc track and control their employee attendance efficiently."
     },
     
     {

@@ -2,7 +2,7 @@ import FadeInSection from "../common/SlideUpSection";
 
 export default function About() {
   return (
-    <section id="about" className="min-h-screen py-24 px-6">
+    <section id="about" className="min-h-screen py-24 px-6 scroll-mt-16">
       <div className="flex gap-3 p-8 flex-col sm:flex-row">
 
         <div className="flex-1">

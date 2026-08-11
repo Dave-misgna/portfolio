@@ -38,7 +38,7 @@ export default function TechStacks() {
         {[...techIcons, ...techIcons].map((tech, index) => (
           <div
             key={index}
-            className="flex flex-col items-center text-gray-600 dark:text-gray-400 hover:text-primary transition-colors duration-300"
+            className="flex flex-col items-center text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors duration-300"
           >
             <div className="text-5xl">{tech.icon}</div>
             <span className="mt-2 text-sm">{tech.name}</span>

@@ -3,15 +3,17 @@ import Link from "next/link";
 
 import { useState } from "react";
 
+type FormStatus = "idle" | "submitting" | "success" | "error";
+
 export default function Contact(){
-    const [submitting, setSubmitting] = useState(false);
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitting(true);
+    setStatus("submitting");
+    setErrorMessage("");
 
-    const form = e.currentTarget;
-    
     const formData = new FormData(e.currentTarget);
 
     const data = {
@@ -21,25 +23,32 @@ export default function Contact(){
       message: formData.get("message"),
     };
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-        if (res.ok) {
-      alert("Message sent successfully, I will get back to you soon!");
-      e.currentTarget.reset();
-    } else {
-      alert("Something went wrong");
+      const result = await res.json();
+
+      if (res.ok) {
+        setStatus("success");
+        e.currentTarget.reset();
+      } else {
+        setStatus("error");
+        setErrorMessage(result.message ?? "Something went wrong. Please try again.");
+      }
+    } catch {
+      setStatus("error");
+      setErrorMessage("Network error. Please check your connection and try again.");
     }
-
-        setSubmitting(false);
   };
+
     return(
-        <section id="contact" className="min-h-screen bg-neutral-900">
+        <section id="contact" className="min-h-screen bg-neutral-900 scroll-mt-16">
             <div className="grid sm:grid-cols-2 gap-20 items-start p-8">
                 <div>
                     <h1 className="text-3xl font-bold text-white">Contact me</h1>
@@ -50,11 +59,12 @@ export default function Contact(){
                         Whether you have a specific project in mind, need assistance with development, 
                         want to discuss innovative solutions, or just want to exchange knowledge and experiences, 
                         I would be more than happy to hear from you. Building meaningful connections and contributing to impactful
-                        projects is something I truly value, so don’t hesitate to get in touch I look forward to connecting with you.
+                        projects is something I truly value, so don&apos;t hesitate to get in touch I look forward to connecting with you.
                     </p>
                     <div className="flex items-center justify-center gap-6 py-18">
                         
                         <Link href="https://www.linkedin.com/in/dawit-misgna-aa3ab825a/" target="_blank"
+                            aria-label="LinkedIn profile"
                             className="p-3 rounded-lg border border-neutral-700 bg-neutral-800 
                             hover:border-blue-500 hover:bg-neutral-700 
                             transition-all duration-300 hover:scale-110"
@@ -68,10 +78,10 @@ export default function Contact(){
                             </svg>
                         </Link>
 
-                       
                         <Link
                         href="https://github.com/Dave-misgna"
                         target="_blank"
+                        aria-label="GitHub profile"
                         className="p-3 rounded-lg border border-neutral-700 bg-neutral-800 
                         hover:border-white hover:bg-neutral-700 
                         transition-all duration-300 hover:scale-110"
@@ -84,24 +94,6 @@ export default function Contact(){
                         <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.23c-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.73.08-.73 1.2.08 1.83 1.23 1.83 1.23 1.06 1.8 2.8 1.28 3.48.98.1-.77.42-1.28.76-1.57-2.66-.3-5.46-1.33-5.46-5.92 0-1.31.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.4 11.4 0 013 0c2.3-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.76.84 1.23 1.91 1.23 3.22 0 4.6-2.8 5.61-5.47 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
                         </svg>
                     </Link>
-
-                    
-                    <Link
-                        href="https://twitter.com/yourusername"
-                        target="_blank"
-                        className="p-3 rounded-lg border border-neutral-700 bg-neutral-800 
-                        hover:border-sky-400 hover:bg-neutral-700 
-                        transition-all duration-300 hover:scale-110"
-                    >
-                        <svg
-                        className="w-6 h-6 text-gray-300 hover:text-sky-400 transition-colors"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        >
-                        <path d="M18.244 2H21l-6.56 7.5L22.5 22h-6.86l-5.38-7.04L3.9 22H1l7.06-8.06L1.5 2h6.98l4.88 6.4L18.244 2z" />
-                        </svg>
-                    </Link>
-
                     </div>
 
                 </div>
@@ -121,7 +113,7 @@ export default function Contact(){
                                 type="text"
                                 autoComplete="given-name"
                                 required
-                                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
+                                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500"
                             />
                             </div>
                         </div>
@@ -136,7 +128,7 @@ export default function Contact(){
                                 type="text"
                                 autoComplete="family-name"
                                 required
-                                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
+                                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500"
                             />
                             </div>
                         </div>
@@ -152,7 +144,7 @@ export default function Contact(){
                                 type="email"
                                 autoComplete="email"
                                 required
-                                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
+                                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500"
                             />
                             </div>
                         </div>
@@ -166,7 +158,7 @@ export default function Contact(){
                                 id="message"
                                 name="message"
                                 rows={4}
-                                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
+                                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500"
                                 required
                             />
                             </div>
@@ -176,12 +168,12 @@ export default function Contact(){
                         <div className="py-15">
                             <button
                                 type="submit"
-                                disabled={submitting}
-                                aria-busy={submitting}
+                                disabled={status === "submitting"}
+                                aria-busy={status === "submitting"}
                                 className="flex items-center justify-center gap-2 w-full rounded-md bg-blue-900 px-3.5 py-2.5 text-center text-sm font-semibold
                                 text-white shadow-xs hover:bg-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2
                                 focus-visible:outline-blue-500 disabled:opacity-60 disabled:cursor-not-allowed">
-                                {submitting ? (
+                                {status === "submitting" ? (
                                     <>
                                         <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
@@ -194,6 +186,17 @@ export default function Contact(){
                                 )}
                             </button>
                         </div>
+
+                        {status === "success" && (
+                            <p role="status" className="text-green-400 text-center">
+                                Message sent successfully, I will get back to you soon!
+                            </p>
+                        )}
+                        {status === "error" && (
+                            <p role="alert" className="text-red-400 text-center">
+                                {errorMessage}
+                            </p>
+                        )}
                     </form>
                 </div>
 

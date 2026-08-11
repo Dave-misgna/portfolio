@@ -13,24 +13,21 @@ export default function Introduction() {
         {/*LEFT SIDE*/}
         <div className="flex-1 space-y-10 text-center p-10">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            Hi, I'm 
-          </h1>
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            <span className="text-gray-400">Dawit</span> Misgna
+            Hi, I&apos;m <span className="text-gray-400">Dawit</span> Misgna
           </h1>
 
           <p className="text-gray-400 text-lg py-6">
             Flutter Developer | Full Stack Developer | CyberSecurity Enthusiast
           </p>
           
-            <div className="flex max-w-4xl text-xl gap-10 px-4">
-              <Link href="https://drive.google.com/file/d/1Vqq1bhHvPU0HD9Ji2vLFUUDeKLwom13A/view?usp=sharing" target="_blank" className="inline-flex items-center justify-center px-2 py-2 border border-transparent 
-              font-medium rounded-md shadow-sm bg-blue-500 hover:bg-blue-700 text-white basis-xs ">
+            <div className="flex max-w-4xl text-xl gap-6 justify-center">
+              <Link href="https://drive.google.com/file/d/1Vqq1bhHvPU0HD9Ji2vLFUUDeKLwom13A/view?usp=sharing" target="_blank" className="inline-flex items-center justify-center px-6 py-2 border border-transparent 
+              font-medium rounded-md shadow-sm bg-blue-500 hover:bg-blue-700 text-white">
                 Resume
               </Link>
-              <Link href="#contact"className="inline-flex items-center justify-center px-2 py-2 border border-blue-500 
-               font-medium rounded-md shadow-sm bg-gray-700 hover:bg-gray-900 text-white basis-xs">
-                Let's Talk
+              <Link href="#contact" className="inline-flex items-center justify-center px-6 py-2 border border-blue-500 
+               font-medium rounded-md shadow-sm bg-gray-700 hover:bg-gray-900 text-white">
+                Let&apos;s Talk
               </Link>
               
             </div>

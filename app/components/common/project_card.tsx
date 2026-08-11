@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type ProjectCardProps = {
@@ -14,11 +15,14 @@ export default function ProjectCard(props: ProjectCardProps) {
     <div className="bg-neutral-800 w-full 
     max-w-sm border rounded-md shadow-xs h-full flex flex-col border-blue-900 
     transform transition-transform duration-300 ease-in-out hover:scale-105">
-        <div>
-            <img
-            className="rounded-t-base w-full h-40 object-cover"
+        <div className="relative">
+            <Image
+            className="w-full h-40 object-cover rounded-t-md"
             src={image}
             alt={title}
+            width={400}
+            height={200}
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
         </div>
 

@@ -21,12 +21,12 @@ export default function Projects(){
     {
       title: "Flutter News App",
       image: "/images/NewsApp.jpg",
-      tag: ["Flutter", "Riverpod", "GetIt", "Firebase ", "Guardian API"],
+      tag: ["Flutter", "Riverpod", "GetIt", "Firebase", "Guardian API"],
       link: "https://github.com/Dave-misgna/News-App",
-      description: "A Flutter News Application that fetches the latest news from [The Guardian API]"
+      description: "A Flutter News Application that fetches the latest news from The Guardian API"
     },
     {
-      title: "Flutter Movie App ",
+      title: "Flutter Movie App",
       image: "/images/image.png",
       tag: ["Flutter", "Riverpod", "GetIt", "TMDb API"],
       link: "https://github.com/Dave-misgna/Movie-App",
@@ -42,10 +42,10 @@ export default function Projects(){
     
   ];
     return(
-        <section id="projects" className="min-h-screen">
+        <section id="projects" className="min-h-screen scroll-mt-16">
             <div className="flex flex-col items-start">
                 <h1 className="text-4xl font-bold mb-6">Projects</h1>
-                <p className="text-start">Recent completed works</p>
+                <p className="text-start">Some of my recent work</p>
             </div>
             <FadeInSection>
             <div className="grid gap-12 md:grid-cols-3 sm:grid-cols-2 justify-items-center p-8 items-stretch">

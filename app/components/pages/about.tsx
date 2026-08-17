@@ -13,7 +13,6 @@ export default function About() {
             <div className="w-1 bg-blue-500 h-full min-h-[100px]" />
        
             <div className="space-y-4 text-gray-300">
-              <p className="text-lg font-medium">+251986543674</p>
               <p className="text-lg">dawitmisgna4@gmail.com</p>
               <p className="text-lg">Addis Ababa, Ethiopia</p>
             </div>
